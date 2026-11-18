@@ -114,6 +114,7 @@ ol.bk-list li::before{content:counter(n);background:none;transform:none;top:0;le
 .bk-gift p{margin:0 !important}
 .bk-sign{margin-top:34px !important;line-height:1.5;color:#4A3726}
 @media (max-width:520px){.bk{font-size:17px}.bk-sticky p{font-size:13.5px;text-align:center}}
+.bk-sticky{transition:transform .4s ease,opacity .4s ease}.bk-sticky.bk-hide{transform:translateY(110%);opacity:0;pointer-events:none}
 </style>
 
 </head>
@@ -529,11 +530,17 @@ ol.bk-list li::before{content:counter(n);background:none;transform:none;top:0;le
   <div class="bk-rule" style="margin-bottom:22px"></div>
   <span class="bk-latin-caps">SALVS · POPVLI · SVPREMA · LEX</span>
 </div>
-<div class="bk-sticky">
+<div class="bk-sticky bk-hide">
   <p>Приглашаю отработать приёмы на практике на интенсиве <strong>«КАРТЫ ВЛИЯНИЯ»</strong></p>
   <a class="bk-btn" href="https://cardsofinfluence.vadimpalii.pro">Посмотреть сайт</a>
 </div>
 </div>
 
+<script>
+(function(){var bar=document.querySelector('.bk-sticky'),ph=document.querySelector('img[src="img/author.jpg"]');
+if(!bar||!ph){bar&&bar.classList.remove('bk-hide');return;}
+function upd(){var r=ph.getBoundingClientRect();bar.classList.toggle('bk-hide',r.top>window.innerHeight);}
+window.addEventListener('scroll',upd,{passive:true});window.addEventListener('resize',upd);upd();})();
+</script>
 </body>
 </html>
