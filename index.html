@@ -544,5 +544,6 @@ if(!bar||!ph){bar&&bar.classList.remove('bk-hide');return;}
 function upd(){var r=ph.getBoundingClientRect();bar.classList.toggle('bk-hide',r.top>window.innerHeight);}
 window.addEventListener('scroll',upd,{passive:true});window.addEventListener('resize',upd);upd();})();
 </script>
+<script>(function(){try{var q=new URLSearchParams(location.search),c=q.get('cid');if(c)localStorage.setItem('kv_cid',c);else c=localStorage.getItem('kv_cid');document.querySelectorAll('a[href*="cardsofinfluence"]').forEach(function(a){var u=new URL(a.href);if(c)u.searchParams.set('cid',c);if(!u.searchParams.get('utm_source'))u.searchParams.set('utm_source','book');a.href=u.toString();});}catch(e){}})();</script>
 </body>
 </html>
